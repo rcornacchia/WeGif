@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers';
+import configureStore from './store';
 import App from './App';
+import DevTools from './containers/DevTools';
+import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 
-let store = createStore(rootReducer);
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div>
+      <DevTools />
+      <App />
+    </div>
   </Provider>,
   document.getElementById('root')
 );

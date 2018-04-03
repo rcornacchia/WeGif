@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components';
+import History from './containers/History';
+import SearchBar from './containers/SearchBar';
+import Gifs from './containers/Gifs';
 import './App.css';
-import { searchGiphy } from './api';
 
-class App extends Component {
-  render() {
-    searchGiphy();
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const Container = styled.div`
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: 300px 3fr;
+`
+
+const App = props => (
+  <Container>
+    <History />
+    <div>
+      <SearchBar />
+      <Gifs />
+    </div>
+  </Container>
+);
 
 export default App;
