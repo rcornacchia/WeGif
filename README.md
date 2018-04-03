@@ -13,7 +13,7 @@ yarn
 
 ## Running the App
 ```
-yarn dev
+yarn start
 ```
 
 You should be navigated to localhost:3000 automatically, but can also
